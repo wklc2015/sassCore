@@ -4,29 +4,29 @@
 //-----------------------------------------------------	
 
 
-// 开关设置
+// Switch Settings
 //-----------------------------------------------------	
-$lte7:                  true !default; //是否兼容ie6-7
-$filter:                false !default; //是否为ie6-8开启css3滤镜兼容，常用于渐变背景 
-$printStyleSwitch:      false !default; //是否开启打印样式
+$lte7:                  true !default; //is compatible with Internet explorer 6-7
+$filter:                false !default; //is open the css3 filter compatible with Internet explorer  6-8
+$printStyleSwitch:      false !default; //is open print styles
 
 
-// font相关
+// about font
 //-----------------------------------------------------	
 $baseFontSize:          14px !default;
 $baseLineHeight:        1.5 !default;
 $baseFontFamily:        "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
-$fontCn:                "SimSun"; //宋体
-$fontYaHei:             "Microsoft Yahei"; //微软雅黑
-$fontHeiTi:             "SimHei"; //黑体
+$fontCn:                "SimSun";
+$fontYaHei:             "Microsoft Yahei";
+$fontHeiTi:             "SimHei";
 
 
-// 元素上下间距
+// elements spacing between up and down
 //-----------------------------------------------------	
 $baseGap:               20px !default;
 
 
-// 基本颜色
+// about color
 // color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
 // lighten($color, $amount)
 // darken($color, $amount)
@@ -49,13 +49,13 @@ $yellow:                #ffc40d !default;
 $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
 
-$primary:               #0078E7 !default;//主色
+$primary:               #0078E7 !default;//the main color
 
 
 // link
-//-----------------------------------------------------	
-// 如果只有一个值则滑过的值为这个值的darken 5%，如果
-// 有两个值则第二个值为滑过的值
+//-----------------------------------------------------
+// if only one value, the value for the slip to darken5%,
+// if there are two values, the second value with the value of slip
 $linkColor:             #08c !default;
 
 
@@ -66,15 +66,15 @@ $textColor:             $grayDarker !default;
 
 
 // placeholder
-//-----------------------------------------------------	
-// 变量分别为：是否输出表单的占位符placeholder样式，文本色
+//-----------------------------------------------------
+// Variables are: whether output form of the placeholder style, the placeholder text color
 $placeholder:           true $gray !default;
 
 
-// 交互配色
-// 警告，错误，成功，提示
+// message component colors
+// warning, error, success, tooltip
 //-----------------------------------------------------	
-// 每个变量都有三个颜色值，分别为：文本色，背景色，边框色
+// there are three colors for every variiables, include textColor, bgColor, borderColor
 $warningColor:               #514721 #FFF6BF #FFD324 !default;
 $errorColor:                 #8A1F11 #FBE3E4 #FBC2C4 !default;
 $successColor:               #264409 #E6EFC2 #C6D880 !default;
