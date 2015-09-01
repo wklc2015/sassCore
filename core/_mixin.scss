@@ -1,18 +1,17 @@
 @charset "UTF-8";
 //-----------------------------------------------------  
 // mixin scss
-// 包括常用的mixin，%及@function
-// mixin，通过@include调用，样式通过拷贝的方式使用，尤其适用于传递参数
-// %，通过@extend调用，样式通过组合申明的方式使用，适用于不传参数的代码片段  
-// @function，返回一个值，用于调用
+// include commonly used, @mixin, %, @function
+// @mixin, call by @include, Style used by means of copy, especially suitable for passing parameters
+// %, call by @extend, Style used by means of combination, is suitable for the parameter code snippets
+// @function, return one value for call
 //-----------------------------------------------------
 
-// mixin & %
-// 既定义了mixin也定义了%，根据需求使用@include或@extend调用
+// @mixin & %
+// defined @mixin and %, two method for call
 //-----------------------------------------------------
 
 // inline-block
-// ie6-7 *display: inline;*zoom:1;
 @mixin inline-block ($extend:true) {
   @if $extend {
     @extend %inline-block;
@@ -27,8 +26,8 @@
   @include inline-block(false);
 }
 
-// Center-align a block level element
-// block得有宽度margin左右为auto才能居中
+// center-block
+// set a block element to center, should set the element width
 @mixin center-block ($extend:true) {
   @if $extend {
     @extend %center-block;
@@ -41,7 +40,7 @@
   @include center-block(false);
 }
 
-// float left & right
+// float left & right, default float left
 @mixin float($float:left) {
   float: $float;
   @if $lte7 {
@@ -53,7 +52,6 @@
 }
 
 // clearfix
-// 闭合子元素的浮动
 @mixin clearfix ($extend:true) {
   @if $extend {
     @extend %clearfix;
@@ -75,8 +73,7 @@
   @include clearfix(false);
 }
 
-// Hide from both screenreaders and browsers: h5bp.com/u
-// 既隐藏于视觉也隐藏于屏幕浏览器
+// Hide from both screenreaders(shi_jue_yue_du_qi) and browsers: h5bp.com/u
 @mixin hidden ($extend:true) {
   @if $extend {
     @extend %hidden;
@@ -89,8 +86,7 @@
   @include hidden(false);
 }
 
-// Hide only visually, but have it available for screenreaders
-// 只隐藏于视觉，屏幕浏览器可以阅读
+// Hide only visually(shi_jue), but have it available for screenreaders
 @mixin visually-hidden ($extend:true) {
   @if $extend {
     @extend %visually-hidden;
@@ -115,11 +111,11 @@
   @include ul-has-style;
 }
 
-// 图片替换文字
-// 高级浏览器直接2就可以
-// 原生7,8不支持color的transparent，所以采用1;
-// ie6用1会有一条细线，所以采用3
-// 如果要兼容ie6，使用的时候请确定元素设置高度。
+// Text replacement images
+// Advanced browers use `2` code
+// ie 7-8, do not support color transparent, so use 1;
+// ie 6 use 1, there will be a thin line, so use 3
+// if to be compatible with ie6, please determine when using element set height.
 @mixin ir($height:99){
   font: 0/0 a; //1
   text-shadow: none;
@@ -136,7 +132,7 @@
 }
 
 // Text overflow
-// 元素可以设置宽度才可应用省略号
+// Elements can be set width to application of ellipsis
 %ellipsis-basic{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -148,7 +144,7 @@
 }
 
 // Opacity
-// lte8使用filter兼容
+// lte8 use filter compatible
 @mixin opacity($opacity:50) {
   opacity: $opacity / 100;
   @if $filter{
@@ -165,6 +161,7 @@
   height: 0;
   width: 0;
   overflow:hidden;
+  display: block;
 }
 @mixin triangle($direction, $size, $borderColor ) {
   @extend %triangle-basic;
@@ -190,7 +187,7 @@
   }
 }
 
-//黑色背景色半透明
+// Black background color translucent(ban_tou_ming)
 @mixin bgcolor-alpha($bgcolor: rgba(0,0,0,.5)){
   color:#fff;
   @if $filter{
@@ -205,7 +202,7 @@
 }
 
 // disabled
-// 禁用样式，加!important
+// disabled styles，add !important
 @mixin disabled($bgColor:#e6e6e6,$textColor:#ababab){
   background-color: $bgColor !important;
   color: $textColor !important;
@@ -215,7 +212,7 @@
   @include disabled;
 }
 
-// 水平间隔线，适用于行列表
+// Horizontal interval line
 @mixin horizontal-line($border:1px dashed $gray, $padding:10px){
   border-bottom:$border;
   padding-top:$padding;
@@ -225,9 +222,18 @@
   @include horizontal-line;
 }
 
+// Horizontal interval line 2
+@mixin horizontal-line2($border:1px dashed $gray, $padding:$baseGap){
+  border-bottom:$border;
+  margin-bottom:$padding;
+  padding-bottom:$padding;
+}
+%horizontal-line2{
+  @include horizontal-line2;
+}
 
 // mixin
-// 只定义了mixin，所以只能通过@include来调用
+// just define mixin, so only call by @include
 //-----------------------------------------------------
 
 // rem
@@ -243,7 +249,7 @@
   font-size: #{$px}rem;
 }
 
-//最小高度
+//min-height
 @mixin min-height($height){
   min-height: $height;
   height: auto !important;
@@ -267,7 +273,7 @@
   }
 }
 
-// 针对火狐浏览器打bug
+// just for firefox brower
 // @include firefox{.test{padding-bottom:3px;}}
 @mixin firefox {
   @-moz-document url-prefix(){
@@ -277,15 +283,15 @@
 
 
 // %
-// 只定义了%，所以只能通过@extend来调用
+// just define %, so only call by @extend
 //-----------------------------------------------------
 
-//为高级浏览器准备的box-sizing盒子模型，ie8+
+//for Advanced brower, ie8+
 %box-sizing-border{
   @include box-sizing;
 }
 
-// 普通all transition特效
+// general all transition effect
 %all-transition{
   @include transition;
 }
@@ -398,7 +404,6 @@
     padding: 8px;
     text-align: left;
   }
-  // 如果
   @if $th{
     th{
       color: $thTextColor;
@@ -409,8 +414,8 @@
   }
 }
 
-// input, select, textarea的基础样式
-// 边框，padding
+// input, select, textarea basic styles
+// border and padding
 %simple-form-basic{
   border: 1px solid $gray;
   padding: 4px;
@@ -420,7 +425,7 @@
   }
 }
 
-// 输入框
+// input
 @mixin simple-text($borderColorFocus: #52a8ec){
   @extend %simple-form-basic;
   height: 18px;
@@ -451,9 +456,7 @@
 // select
 %simple-select{
   @extend %simple-form-basic;
-
   // select lte ie7
-  // ie6,7 不支持select的padding
   @if $lte7 {
       *margin-top:5px;
       *margin-bottom:5px;
@@ -461,13 +464,11 @@
   }
 }
 
-// radio & checkbox 的重置
+// radio & checkbox
 %reset-radio-checkbox{
   margin:0 5px 0 0;
   padding:0;
   font-size: 13px;
-  //ie6,7得设置宽度和高度才能表现和其他浏览器一样的重置
-  //radio和checkbox的大小为13px
   @if $lte7 {
     *width:13px;
     *height:13px;
