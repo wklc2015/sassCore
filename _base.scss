@@ -1,8 +1,9 @@
 @charset "UTF-8";
 //-----------------------------------------------------	
 // base scss
-// 提供所有的基础功能包括：变量设置，css3前缀填充，@media，基础mixin，栅格化grid，reset样式
-// 默认会输出reset样式一份
+// include six parts:
+// 1. setting, 2. css3, 3. media-queries, 4. mixin, 5. grid, 6. reset
+// a style of default will be output
 //-----------------------------------------------------
 
 //-----------------------------------------------------
@@ -13,7 +14,7 @@
 //-----------------------------------------------------
 
 
-// 导入core中的基础文件
+// import the core of basic files
 //-----------------------------------------------------
 @import "core/setting";
 @import "core/css3";
