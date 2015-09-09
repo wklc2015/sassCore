@@ -5,20 +5,19 @@
 
 // thanks:https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_tables.scss
 
-// 变量
+// variables
 //---------------------------------
-$zebraLte8:                      false !default; //斑马线效果是否支持ie8，如果支持请在tr里面添加class odd
+$zebraLte8:                      false !default; //in ie8, please add odd class at tr
 $tableBgColor:                   transparent !default; // overall background-color
 $tableBgColorEven:               #f9f9f9 !default; // for striping zebra
 $tableBgColorHover:              #e9f5ff !default; // for hover
 $tableBorderColor:               $gray !default; // table and cell border
-$tableThBgColor:                 #f4f4f4 !default;//默认th背景色
-$tableColThWidth:                80px !default;//默认左边第一栏为th表格的th宽度
-$tableCellPadding:               8px !default;//单元格的padding
-$tableRadius:                    $baseRadius !default;//圆角大小
-$tableResetSwitch:               true !default;//是否已经有了table的重置border-collapse: collapse;border-spacing: 0;
+$tableThBgColor:                 #f4f4f4 !default;//default th bgColor
+$tableColThWidth:                80px !default;//default left th width
+$tableCellPadding:               8px !default;//td and th padding
+$tableRadius:                    $baseRadius !default;//border-radius
+$tableResetSwitch:               true !default;//is reset table: border-collapse: collapse;border-spacing: 0;
 
-//各个table开关设置
 $tableBorderSwitch:              true !default;
 $tableListSwitch:                false !default;
 $tableColThSwitch:               false !default;

@@ -1,19 +1,18 @@
 @charset "UTF-8";
 //-----------------------------------------------------	
 // message scss
-// 交互提示信息：包括警告，错误，成功，提示四种状态
 //-----------------------------------------------------
 
-// 变量
+// variables
 //----------------------------------------------------- 
-$msgIconSwitch:              true !default;// 是否启用icon背景，背景图片使用base64，ie8+支持
-$msgRadius:                  0 !default; // 样式圆角大小，设置为0将不产生圆角。
-$msgClassSwitch:             true false false false !default; //错误 成功 警告 提示
+$msgIconSwitch:              true !default;// icon bg，use base64，ie8+
+$msgRadius:                  0 !default; // border-radius
+$msgClassSwitch:             false false false false !default; //error success worning tooltip
 
 
 // mixin
 //-----------------------------------------------------
-// 基本样式
+// basic
 @mixin message-basic{
     padding:8px;
     a{
@@ -33,7 +32,7 @@ $msgClassSwitch:             true false false false !default; //错误 成功 �
   @include message-basic;
 }
 
-// 配色方案，包括文本色，背景色，边框颜色
+// color:textColor, bgColor, borderColor
 @mixin message-skin($textColor, $bgColor, $borderColor ){
     background-color:$bgColor;
     border:2px solid $borderColor;
@@ -45,7 +44,7 @@ $msgClassSwitch:             true false false false !default; //错误 成功 �
 }
 
 
-// 样式
+// stykles
 //-----------------------------------------------------
 @if nth($msgClassSwitch, 1){
   .error{

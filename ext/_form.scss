@@ -1,12 +1,9 @@
 @charset "utf-8";
 //-----------------------------------------------------
 // form scss
-// 提交按钮样式基于_btn.scss
-// 交互提示报错信息样式基于_message.scss
+// maybe need _btn.scss and _message.scss
 //-----------------------------------------------------
 
-
-//变量
 //---------------------------------
 $formItemMargin:           10px !default; //上下元素的间距
 $formLabelWidth:           100px !default; //当label和元素同行时，label的宽度

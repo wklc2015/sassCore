@@ -3,9 +3,9 @@
 // typography scss
 //----------------------------------------------------- 
 
-// 变量
+// variables
 //-----------------------------------------------------
-$article:               true article !default; //第一个变量为是否开启文章详细页样式，第二个为默认的class
+$article:               false article !default; //is open article page detail styles, and the default class
 
 
 // Blockquotes
@@ -55,9 +55,7 @@ hr {
 
 
 // article style
-// 详细页文章内容样式，通过变量$articleStyleSwitch来控制输出
-// 详细页内容的默认的class为.article，可通过变量$articleClass来设置
-//-----------------------------------------------------    
+//-----------------------------------------------------
 @if nth($article,1){
   .#{nth($article,2)}{
     line-height: 1.6;

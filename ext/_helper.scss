@@ -25,7 +25,7 @@ ul.inline-block{
   }
 }
 
-// 浮动及闭合浮动
+// float and clearfix
 .fl{
   @extend %float;
 }
@@ -36,7 +36,7 @@ ul.inline-block{
   @extend %clearfix;
 }
 
-// 不同形式的隐藏
+//some method hidden
 .hidden{
   @extend %hidden;
 }
@@ -52,12 +52,12 @@ ul.inline-block{
 	text-align: center;
 }
 
-// 图片替换文字
+// img replace text
 .ir{
 	@extend %ir;
 }
 
-// 灰色
+// color
 .gray{
   color:$gray;
 }
